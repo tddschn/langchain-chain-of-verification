@@ -1,0 +1,14 @@
+[project]
+name = "langchain-chain-of-verification"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+hello = "langchain_chain_of_verification:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
