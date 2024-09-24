@@ -12,13 +12,30 @@ def create_cove_chain(
     original_query: str,
     llm_name="gpt-4o",
     temperature=0.1,
-    max_tokens=500,
+    router_max_tokens=500,
     show_intermediate_steps=True,
 ) -> str:
+    """
+    Creates a Chain of Verification (CoVE) using specified language models.
+
+    Args:
+        original_query (str): The original question to be processed.
+        llm_name (str, optional): The name of the language model to use. Defaults to "gpt-4o".
+        temperature (float, optional): The temperature setting for the language model. Defaults to 0.1.
+        router_max_tokens (int, optional): The maximum number of tokens for the language model. Defaults to 500.
+        show_intermediate_steps (bool, optional): Whether to show intermediate steps. Defaults to True.
+
+    Returns:
+        str: The result (final answer) of the CoVE chain processing.
+
+    Example:
+        >>> result = create_cove_chain("What is the capital of France?")
+        >>> print(result)
+    """
     chain_llm = ChatOpenAI(
         model_name=llm_name,
         temperature=temperature,
-        max_tokens=max_tokens,
+        max_tokens=router_max_tokens,
     )
 
     route_llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.1, max_tokens=500)
@@ -74,7 +91,7 @@ def cli_main():
         original_query=args.question,
         llm_name=args.llm_name,
         temperature=args.temperature,
-        max_tokens=args.max_tokens,
+        router_max_tokens=args.max_tokens,
         show_intermediate_steps=args.show_intermediate_steps,
     )
 

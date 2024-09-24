@@ -44,6 +44,34 @@ options:
 
 ### Library
 
+```python
+def create_cove_chain(
+    original_query: str,
+    llm_name="gpt-4o",
+    temperature=0.1,
+    router_max_tokens=500,
+    show_intermediate_steps=True,
+) -> str:
+    """
+    Creates a Chain of Verification (CoVE) using specified language models.
+
+    Args:
+        original_query (str): The original question to be processed.
+        llm_name (str, optional): The name of the language model to use. Defaults to "gpt-4o".
+        temperature (float, optional): The temperature setting for the language model. Defaults to 0.1.
+        router_max_tokens (int, optional): The maximum number of tokens for the language model. Defaults to 500.
+        show_intermediate_steps (bool, optional): Whether to show intermediate steps. Defaults to True.
+
+    Returns:
+        str: The result (final answer) of the CoVE chain processing.
+
+    Example:
+        >>> result = create_cove_chain("What is the capital of France?")
+        >>> print(result)
+    """
+    ...
+```
+
 ## Examples
 
 ```plain
