@@ -55,7 +55,7 @@ def create_cove_chain(
     temperature=0.1,
     router_max_tokens=500,
     show_intermediate_steps=True,
-) -> str:
+) -> dict:
     """
     Creates a Chain of Verification (CoVE) using specified language models.
 
@@ -67,7 +67,7 @@ def create_cove_chain(
         show_intermediate_steps (bool, optional): Whether to show intermediate steps. Defaults to True.
 
     Returns:
-        str: The result (final answer) of the CoVE chain processing.
+        dict: The result (final answer) of the CoVE chain processing. See the example below, the dict between '###'s.
 
     Example:
         >>> result = create_cove_chain("What is the capital of France?")
