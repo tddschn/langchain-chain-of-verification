@@ -1,12 +1,6 @@
 # from __future__ import annotations
 
-import os
-import re
 import itertools
-import openai
-import tiktoken
-import json
-from dotenv import load_dotenv
 
 from typing import Any, Dict, List, Optional
 
@@ -17,25 +11,10 @@ from langchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.schema import (
-    AIMessage,
-    HumanMessage,
-    SystemMessage
-)
 from langchain.chains.base import Chain
 from langchain.prompts.base import BasePromptTemplate
 from langchain.tools import DuckDuckGoSearchRun
-import langchain
-from langchain.chat_models import ChatOpenAI
-from langchain.tools import DuckDuckGoSearchRun
-from langchain.schema import (
-    AIMessage,
-    HumanMessage,
-    SystemMessage
-)
-from langchain.chains.llm import LLMChain
 from langchain.prompts import PromptTemplate
-from langchain.chains import SequentialChain
 
 import prompts
 

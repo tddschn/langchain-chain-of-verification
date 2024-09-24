@@ -4,12 +4,12 @@ from pprint import pprint
 
 from langchain.chat_models import ChatOpenAI
 
-from route_chain import RouteCOVEChain
+from langchain_chain_of_verification.route_chain import RouteCOVEChain
 
 load_dotenv()
 
 
-if __name__ == "__main__":
+def cli_main():
     parser = argparse.ArgumentParser(description="Chain of Verification (CoVE) parser.")
     parser.add_argument(
         "--question",
@@ -67,3 +67,7 @@ if __name__ == "__main__":
         pprint(router_cove_chain_result)
         print("\n" + 80 * "#" + "\n")
     print("Final Answer: {}".format(router_cove_chain_result["final_answer"]))
+
+
+if __name__ == "__main__":
+    cli_main()
