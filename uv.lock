@@ -493,7 +493,7 @@ wheels = [
 
 [[package]]
 name = "langchain-chain-of-verification"
-version = "0.1.7"
+version = "0.1.8"
 source = { editable = "." }
 dependencies = [
     { name = "duckduckgo-search", marker = "python_full_version >= '3.12'" },

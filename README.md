@@ -45,6 +45,8 @@ options:
 ### Library
 
 ```python
+from langchain_chain_of_verification import create_cove_chain
+
 def create_cove_chain(
     original_query: str,
     llm_name="gpt-4o",
