@@ -2,7 +2,7 @@ import argparse
 from dotenv import load_dotenv
 from pprint import pprint
 
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 
 from langchain_chain_of_verification.route_chain import RouteCOVEChain
 

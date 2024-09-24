@@ -14,7 +14,7 @@ from langchain.callbacks.manager import (
 )
 from langchain.chains.base import Chain
 from langchain.prompts.base import BasePromptTemplate
-from langchain.tools import DuckDuckGoSearchRun
+from langchain_community.tools import DuckDuckGoSearchRun
 from langchain.prompts import PromptTemplate
 
 
