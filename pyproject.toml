@@ -10,6 +10,14 @@ dependencies = [
     "langchain==0.2.1",
     "python-dotenv>=1.0.1",
 ]
+license = "MIT"
+# homepage = "https://github.com/tddschn/langchain-chain-of-verification"
+# repository = "https://github.com/tddschn/langchain-chain-of-verification"
+classifiers = ["Topic :: Utilities"]
+keywords = ["prompt-engineering", "langchain", "cli"]
+
+# [tool.poetry.urls]
+# "Bug Tracker" = "https://github.com/tddschn/langchain-chain-of-verification/issues"
 
 [project.scripts]
 # hello = "langchain_chain_of_verification:hello"
