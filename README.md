@@ -1,16 +1,26 @@
 # langchain-chain-of-verification 
 
-Based off https://github.com/ritun16/chain-of-verification , packaged and updated for newer langchain versions for easier consumption.
+Based off https://github.com/ritun16/chain-of-verification , packaged (with `uv`) and updated for newer langchain versions for easier consumption.
 
 Can be used as CLI or library.
 
+CoVe: https://arxiv.org/pdf/2309.11495
+
+Enhanced by DuckDuckGo search (by ritun16)
+
 - [langchain-chain-of-verification](#langchain-chain-of-verification)
   - [Usage](#usage)
+    - [CLI](#cli)
+    - [Library](#library)
+  - [Examples](#examples)
   - [Installation](#installation)
     - [pipx](#pipx)
     - [pip](#pip)
 
 ## Usage
+
+
+### CLI
 
 ```plain
 # uvx --from langchain-chain-of-verification cove --help
@@ -32,6 +42,53 @@ options:
                         The max_tokens of the llm
 ```
 
+### Library
+
+## Examples
+
+```plain
+cove --question 'name athletes born in raleigh'
+Chain selected: WIKI_CHAIN
+
+################################################################################
+
+{'baseline_response': '1. Chasity Melvin\n'
+                      '2. Ryan Jeffers\n'
+                      "3. Devonte' Graham\n"
+                      '4. Trea Turner',
+ 'final_answer': 'Based on the verification questions and answers, the refined '
+                 'answer should only include athletes who were confirmed to be '
+                 'born in Raleigh. Therefore, the final refined answer is:\n'
+                 '\n'
+                 '1. Ryan Jeffers\n'
+                 "2. Devonte' Graham",
+ 'original_question': 'name athletes born in raleigh',
+ 'verification_answers': 'Question: 1. Was Chasity Melvin born in Raleigh? '
+                         'Answer: No, Chasity Melvin was not born in Raleigh. '
+                         'She was born in Roseboro, North Carolina.\n'
+                         'Question: 2. Was Ryan Jeffers born in Raleigh? '
+                         'Answer: Yes, Ryan Jeffers was born in Raleigh, North '
+                         'Carolina.\n'
+                         "Question: 3. Was Devonte' Graham born in Raleigh? "
+                         "Answer: Yes, Devonte' Graham was born in Raleigh, "
+                         'North Carolina.\n'
+                         'Question: 4. Was Trea Turner born in Raleigh? '
+                         'Answer: No, Trea Turner was not born in Raleigh. '
+                         'According to the provided context, Trea Turner was '
+                         'born on June 30, 1993, in Boynton Beach, Florida.\n',
+ 'verification_question_template': 'Was [athlete] born in [Raleigh]?',
+ 'verification_questions': '1. Was Chasity Melvin born in Raleigh?\n'
+                           '2. Was Ryan Jeffers born in Raleigh?\n'
+                           "3. Was Devonte' Graham born in Raleigh?\n"
+                           '4. Was Trea Turner born in Raleigh?'}
+
+################################################################################
+
+Final Answer: Based on the verification questions and answers, the refined answer should only include athletes who were confirmed to be born in Raleigh. Therefore, the final refined answer is:
+
+1. Ryan Jeffers
+2. Devonte' Graham
+```
 
 ## Installation
 

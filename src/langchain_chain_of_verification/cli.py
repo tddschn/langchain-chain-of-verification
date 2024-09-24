@@ -3,10 +3,33 @@ from dotenv import load_dotenv
 from pprint import pprint
 
 from langchain_community.chat_models import ChatOpenAI
-
 from langchain_chain_of_verification.route_chain import RouteCOVEChain
 
 load_dotenv()
+
+
+def create_cove_chain(
+    original_query: str,
+    llm_name="gpt-4o",
+    temperature=0.1,
+    max_tokens=500,
+    show_intermediate_steps=True,
+) -> str:
+    chain_llm = ChatOpenAI(
+        model_name=llm_name,
+        temperature=temperature,
+        max_tokens=max_tokens,
+    )
+
+    route_llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.1, max_tokens=500)
+
+    router_cove_chain_instance = RouteCOVEChain(
+        original_query, route_llm, chain_llm, show_intermediate_steps
+    )
+    router_cove_chain = router_cove_chain_instance()
+    router_cove_chain_result = router_cove_chain({"original_question": original_query})
+
+    return router_cove_chain_result
 
 
 def cli_main():
@@ -47,20 +70,13 @@ def cli_main():
     )
     args = parser.parse_args()
 
-    original_query = args.question
-    chain_llm = ChatOpenAI(
-        model_name=args.llm_name,
+    router_cove_chain_result = create_cove_chain(
+        original_query=args.question,
+        llm_name=args.llm_name,
         temperature=args.temperature,
         max_tokens=args.max_tokens,
+        show_intermediate_steps=args.show_intermediate_steps,
     )
-
-    route_llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.1, max_tokens=500)
-
-    router_cove_chain_instance = RouteCOVEChain(
-        original_query, route_llm, chain_llm, args.show_intermediate_steps
-    )
-    router_cove_chain = router_cove_chain_instance()
-    router_cove_chain_result = router_cove_chain({"original_question": original_query})
 
     if args.show_intermediate_steps:
         print("\n" + 80 * "#" + "\n")

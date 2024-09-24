@@ -8,6 +8,7 @@ dependencies = [
     "duckduckgo-search>=6.2.13",
     "langchain-community>=0.2.4",
     "langchain==0.2.1",
+    "openai>=1.47.1",
     "python-dotenv>=1.0.1",
 ]
 license = "MIT"
