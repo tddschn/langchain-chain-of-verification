@@ -21,7 +21,7 @@ def cli_main():
         "--llm-name",
         type=str,
         required=False,
-        default="gpt-3.5-turbo-0613",
+        default="gpt-4o",
         help="The openai llm name",
     )
     parser.add_argument(

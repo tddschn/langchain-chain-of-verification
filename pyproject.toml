@@ -13,7 +13,7 @@ dependencies = [
 
 [project.scripts]
 # hello = "langchain_chain_of_verification:hello"
-cove = "langchain_chain_of_verification:main"
+cove = "langchain_chain_of_verification:cli_main"
 
 [build-system]
 requires = ["hatchling"]

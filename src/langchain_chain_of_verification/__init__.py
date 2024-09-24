@@ -1,2 +1,4 @@
-def hello() -> None:
-    print("Hello from langchain-chain-of-verification!")
+from langchain_chain_of_verification.main import cli_main
+
+
+__all__ = ["cli_main"]
