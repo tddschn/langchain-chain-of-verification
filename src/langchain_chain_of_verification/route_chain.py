@@ -8,6 +8,7 @@ from langchain_chain_of_verification.cove_chains import (
     MultiSpanCOVEChain,
     LongFormCOVEChain,
 )
+import langchain_chain_of_verification.prompts as prompts
 
 
 class RouteCOVEChain(object):
