@@ -493,7 +493,7 @@ wheels = [
 
 [[package]]
 name = "langchain-chain-of-verification"
-version = "0.1.6"
+version = "0.1.7"
 source = { editable = "." }
 dependencies = [
     { name = "duckduckgo-search", marker = "python_full_version >= '3.12'" },
@@ -507,7 +507,7 @@ dependencies = [
 requires-dist = [
     { name = "duckduckgo-search", specifier = ">=6.2.13" },
     { name = "langchain", specifier = "==0.2.1" },
-    { name = "langchain-community", specifier = ">=0.2.4" },
+    { name = "langchain-community", specifier = ">=0.2.1" },
     { name = "openai", specifier = ">=1.47.1" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
 ]
