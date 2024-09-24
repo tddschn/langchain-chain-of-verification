@@ -1,8 +1,8 @@
 # langchain-chain-of-verification 
 
-Based off https://github.com/ritun16/chain-of-verification , packaged (with `uv`) and updated for newer langchain versions for easier consumption.
+Based off CoVe CLI at https://github.com/ritun16/chain-of-verification , packaged (with `uv`) and updated for newer langchain versions for easier consumption.
 
-Can be used as CLI or library.
+`langchain-chain-of-verification` Can be used as CLI or library.
 
 CoVe: https://arxiv.org/pdf/2309.11495
 
