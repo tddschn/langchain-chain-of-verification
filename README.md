@@ -16,6 +16,8 @@ Enhanced by DuckDuckGo search (by ritun16)
   - [Installation](#installation)
     - [pipx](#pipx)
     - [pip](#pip)
+  - [Screenshots](#screenshots)
+    - [LangSmith](#langsmith)
 
 ## Usage
 
@@ -137,3 +139,12 @@ $ pipx install langchain-chain-of-verification
 ```
 $ pip install langchain-chain-of-verification
 ```
+
+## Screenshots
+
+### LangSmith
+
+<figure>
+    <img src="https://github.com/user-attachments/assets/39326eb4-b5bc-4fbb-b035-2e330b06cbf0" alt="">
+    <figcaption>See the example above</figcaption>
+</figure>
