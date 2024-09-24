@@ -1,4 +1,4 @@
-from langchain_chain_of_verification.main import cli_main
+from langchain_chain_of_verification.cli import cli_main
 
 
 __all__ = ["cli_main"]
